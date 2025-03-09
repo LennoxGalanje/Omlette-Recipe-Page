@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+/* || RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --RSE-50: #fff7fb;
+  --RSE-800: #7a284e;
+  --STONE-600: #5f564d;
+  --STONE-900: #312e2c;
+  --STONE-150: #e3ddd7;
+  --STONE-100: #f3e5d7;
+  --BROWN: #854632;
+  --WHITE: #ffffff;
+
+  /* TYPOGRAPHY */
+  --FF1: "Young Serif", serif;
+  --FF2: "Outfit", sans-serif;
+
+  /* DESKTOP */
+  --TEXT-PRESET-1: normal 2.5rem/100% var(--FF1);
+  --TEXT-PRESET-2: normal 1.75rem/100% var(--FF1);
+  --TEXT-PRESET-3: 600 1.25rem/100% var(--FF2);
+  --TEXT-PRESET-4: normal 1rem/100% var(--FF2);
+  --TEXT-PRESET-4-BOLD: 700 1rem/100% var(--FF2);
+
+  /* MOBILE */
+  --TEXT-PRESET-1-MOB: normal 2.25rem/100% var(--FF1);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-image {
+  display: none;
+}
+
+/* || MOBILE DESIGN || */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* CARD */
+.card-container {
+  width: 100%;
+}
+.card-container > section {
+  margin: 32px;
+}
+
+/* CARD-TEXT-CONTENT */
+.card-text-content {
+  margin: 40px 32px;
+}
+/* TITLE*/
+.text-content__title {
+  margin-bottom: 32px;
+}
+.title__h1 {
+  font: var(--TEXT-PRESET-1-MOB);
+  color: var(--STONE-900);
+  margin-bottom: 24px;
+}
+.title__subtext {
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+/* PREPARATION */
+.text-content__preparation {
+  width: 311px;
+  height: 196px;
+  background-color: var(--RSE-50);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.preparation__title {
+  font: var(--TEXT-PRESET-3);
+  color: var(--RSE-800);
+  margin-bottom: 16px;
+}
+
+.preparation__ul {
+  list-style: none;
+}
+
+.preparation__ul li:first-child p {
+  width: 215px;
+}
+.preparation__ul li,
+.ingredients__ul li {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+.preparation__ul li:last-child,
+.ingredients__ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.preparation__ul li::before,
+.ingredients__ul li::before {
+  content: "•";
+  font-size: 24px;
+  color: var(--RSE-800);
+  margin-right: 16px;
+}
+
+/* INGREDIENTS */
+.ingredients__ul li::before {
+  color: var(--BROWN);
+}
+.text-content__ingredients {
+  margin-bottom: 32px;
+  margin: 0;
+}
+
+.ingredients__title {
+  color: var(--BROWN);
+  font: var(--TEXT-PRESET-2);
+  margin-bottom: 24px;
+}
+
+/* LINE */
+.line {
+  width: 311px;
+  height: 1px;
+  background-color: var(--STONE-150);
+  margin: 32px;
+}
+
+/* INSTRUCTIONS */
+.text-content__instructions {
+  margin-bottom: 32px;
+}
+
+.instructions__title {
+  margin-bottom: 24px;
+  font: var(--TEXT-PRESET-2);
+  color: var(--BROWN);
+}
+
+.instructions__ol {
+  counter-reset: list-counter;
+  list-style: none;
+}
+
+.instructions__ol li p {
+  width: 271px;
+}
+
+.instructions__ol li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+.instructions__ol li:last-child {
+  margin-bottom: 0;
+}
+
+.instructions__ol li::before {
+  counter-increment: list-counter;
+  content: counter(list-counter) ". ";
+  font: var(--TEXT-PRESET-4-BOLD);
+  color: var(--BROWN);
+  margin-right: 16px;
+}
+
+/* NUTRITION */
+.text-content__nutrition {
+  margin-bottom: 40px;
+}
+
+.nutrition__title {
+  font: var(--TEXT-PRESET-2);
+  color: var(--BROWN);
+  margin-bottom: 24px;
+}
+
+.nutrition__subtext {
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+  margin-bottom: 24px;
+}
+
+.flex-table {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.flex-table-row {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--STONE-150);
+  width: 100%;
+  gap: 16px;
+}
+
+.flex-table-row:last-child {
+  border-bottom: 0px solid var(--STONE-150);
+}
+
+.nutrient {
+  color: var(--STONE-600);
+  width: 115.5px;
+  font: var(--TEXT-PRESET-4);
+  margin-left: 32px;
+}
+
+.nutrient-value {
+  color: var(--BROWN);
+  width: 115.5px;
+  font: var(--TEXT-PRESET-4-BOLD);
+}
+
+/* || TABLET ||*/
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    place-content: center;
+    background-color: var(--STONE-100);
+  }
+
+  /* CARD */
+  .card-container {
+    width: 616px;
+    height: 1844;
+    margin: 128px 76px;
+    background-color: white;
+    border-radius: 24px;
+  }
+  /* CARD-HERO */
+  .card-hero {
+    margin: 40px 40px 0px 40px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  /* CARD-TEXT-CONTENT */
+  .card-text-content {
+    margin: 40px;
+  }
+  /* TITLE*/
+  .title__h1 {
+    font: var(--TEXT-PRESET-1);
+  }
+
+  /* PREPARATION */
+  .text-content__preparation {
+    width: 536px;
+    height: 172px;
+  }
+
+  .preparation__ul li:first-child p {
+    width: 100%;
+  }
+
+  /* LINE */
+  .line {
+    width: 536px;
+  }
+
+  /* INSTRUCTIONS */
+
+  .instructions__ol li p {
+    width: 496px;
+  }
+
+  /* NUTRITION */
+
+  .nutrition__subtext {
+    width: 100%;
+  }
+
+  .nutrient {
+    width: 228px;
+  }
+
+  .nutrient-value {
+    width: 228px;
+  }
+}
+
+/* || DESKTOP ||*/
+
+@media (min-width: 992px) {
+ 
+  /* CARD */
+  .card-container {
+    width: 736px;
+    height: 1700;
+    margin: 128px 352px;
+    }
+
+  /* PREPARATION */
+  .text-content__preparation {
+    width: 656px;
+  }
+
+  /* LINE */
+  .line {
+    width: 656px;
+  }
+
+  /* INSTRUCTIONS */
+
+  .instructions__ol li p {
+    width: 616px;
+  }
+
+  /* NUTRITION */
+  .nutrient {
+    width: 228px;
+  }
+
+  .nutrient-value {
+    width: 228px;
+  }
+}
